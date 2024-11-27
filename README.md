@@ -27,8 +27,6 @@ The **Advanced Inventory Management System** is a Java-based application designe
 5. **Complex Query Support**
    - Provides a feature to retrieve the **top K items** with the highest quantity across all categories.
 
-## Constraints
-- The system is designed to handle at least **100,000 items** efficiently.
-- Optimized use of Java's **Collection Framework** (e.g., `Map`, `Set`, `Queue`, etc.).
+
 
 
