@@ -2,16 +2,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Initialize inventory with a capacity of 10 items
         Inventory inventory = new Inventory(10);
 
         System.out.println("### Adding Items ###");
         inventory.addOrUpdateItem("101", "Laptop", "Electronics", 50);
         inventory.addOrUpdateItem("102", "Table", "Furniture", 20);
-        inventory.addOrUpdateItem("103", "Apple", "Groceries", 5); // Should trigger restock notification
+        inventory.addOrUpdateItem("103", "Apple", "Groceries", 5); 
         inventory.addOrUpdateItem("104", "Monitor", "Electronics", 30);
         inventory.addOrUpdateItem("105", "Chair", "Furniture", 15);
-        inventory.addOrUpdateItem("106", "Banana", "Groceries", 8); // Should trigger restock notification
+        inventory.addOrUpdateItem("106", "Banana", "Groceries", 8); 
         inventory.addOrUpdateItem("107", "Smartphone", "Electronics", 40);
         inventory.addOrUpdateItem("108", "Desk Lamp", "Furniture", 12);
         inventory.addOrUpdateItem("109", "Rice", "Groceries", 25);
@@ -21,11 +20,11 @@ public class Main {
         System.out.println("Search for non-existent item ID 110: " + inventory.searchItemById("110"));
 
         System.out.println("\n### Updating Items ###");
-        inventory.addOrUpdateItem("103", "Apple", "Groceries", 15); // Update quantity
+        inventory.addOrUpdateItem("103", "Apple", "Groceries", 15); 
         System.out.println("Updated item ID 103: " + inventory.searchItemById("103"));
 
         System.out.println("\n### Deleting Items ###");
-        inventory.deleteItem("102"); // Remove item with ID 102
+        inventory.deleteItem("102"); 
         System.out.println("Furniture items after deleting Table: " + inventory.getCategoryItems("Furniture"));
 
         System.out.println("\n### Retrieving Category Items ###");
@@ -38,19 +37,18 @@ public class Main {
         System.out.println("Top 3 items by quantity: " + top3);
 
         System.out.println("\n### Restock Notifications ###");
-        inventory.addOrUpdateItem("110", "Milk", "Groceries", 2); // Should trigger restock notification
-        inventory.addOrUpdateItem("111", "Fan", "Electronics", 1); // Should trigger restock notification
+        inventory.addOrUpdateItem("110", "Milk", "Groceries", 2); 
+        inventory.addOrUpdateItem("111", "Fan", "Electronics", 1); 
 
         System.out.println("\n### Adding Items to Trigger Restock Notification ###");
-        inventory.addOrUpdateItem("112", "Notebook", "Stationery", 3); // Restock Notification
+        inventory.addOrUpdateItem("112", "Notebook", "Stationery", 3); 
 
         System.out.println("\n### Merge Inventories ###");
-        // Create a second inventory to merge
         Inventory otherInventory = new Inventory(10);
-        otherInventory.addOrUpdateItem("101", "Laptop", "Electronics", 60); // Higher quantity
+        otherInventory.addOrUpdateItem("101", "Laptop", "Electronics", 60); 
         otherInventory.addOrUpdateItem("113", "Pen", "Stationery", 50);
-        otherInventory.addOrUpdateItem("105", "Chair", "Furniture", 25); // Higher quantity
-        otherInventory.addOrUpdateItem("109", "Rice", "Groceries", 30); // Higher quantity
+        otherInventory.addOrUpdateItem("105", "Chair", "Furniture", 25); 
+        otherInventory.addOrUpdateItem("109", "Rice", "Groceries", 30); 
         otherInventory.addOrUpdateItem("114", "Chocolates", "Groceries", 100);
 
         inventory.mergeInventory(otherInventory);
@@ -62,11 +60,9 @@ public class Main {
         System.out.println("Stationery: " + inventory.getCategoryItems("Stationery"));
 
         System.out.println("\n### Edge Cases ###");
-        // Adding item with zero quantity (edge case)
         inventory.addOrUpdateItem("115", "ZeroQuantityItem", "Miscellaneous", 0);
         System.out.println("Miscellaneous items: " + inventory.getCategoryItems("Miscellaneous"));
 
-        // Attempt to delete a non-existent item
         System.out.println("\nAttempting to delete non-existent item ID 200:");
         inventory.deleteItem("200");
 
