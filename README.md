@@ -31,12 +31,4 @@ The **Advanced Inventory Management System** is a Java-based application designe
 - The system is designed to handle at least **100,000 items** efficiently.
 - Optimized use of Java's **Collection Framework** (e.g., `Map`, `Set`, `Queue`, etc.).
 
-## Deliverables
-1. A well-documented Java class implementing the inventory system.
-2. A test suite to validate functionality and handle edge cases.
 
-## How to Run
-1. Clone the repository or copy the source code into your Java development environment.
-2. Compile the code using any Java IDE or `javac` command:
-   ```bash
-   javac Main.java
